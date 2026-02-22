@@ -1,19 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/display"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="0"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:id="@+id/btnPlus"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="+"
+        android:onClick="clickPlus"
+        app:layout_constraintTop_toBottomOf="@id/display"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnMinus"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"/>
+
+    <Button
+        android:id="@+id/btnMinus"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="-"
+        android:onClick="clickMinus"
+        app:layout_constraintTop_toTopOf="@id/btnPlus"
+        app:layout_constraintStart_toEndOf="@id/btnPlus"
+        app:layout_constraintEnd_toStartOf="@id/btnMult"
+        android:layout_marginEnd="4dp"/>
+
+    <Button
+        android:id="@+id/btnMult"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="*"
+        android:onClick="clickMult"
+        app:layout_constraintTop_toTopOf="@id/btnPlus"
+        app:layout_constraintStart_toEndOf="@id/btnMinus"
+        app:layout_constraintEnd_toStartOf="@id/btnDiv"
+        android:layout_marginEnd="4dp"/>
+
+    <Button
+        android:id="@+id/btnDiv"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="/"
+        android:onClick="clickDiv"
+        app:layout_constraintTop_toTopOf="@id/btnPlus"
+        app:layout_constraintStart_toEndOf="@id/btnMult"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="A/C"
+        android:onClick="clickAC"
+        app:layout_constraintTop_toBottomOf="@id/btnPlus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnEqual"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"/>
+
+    <Button
+        android:id="@+id/btnEqual"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="="
+        android:onClick="clickEqual"
+        app:layout_constraintTop_toTopOf="@id/btnClear"
+        app:layout_constraintStart_toEndOf="@id/btnClear"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
